@@ -8,6 +8,7 @@
     "postbuild": "echo 'Caching .next/cache directory,'",
     "start": "next start",
     "prettier": "prettier --write .",
+    "lint": "eslint . --fix",
     "format": "next lint --fix && prettier '**/*.{json,yaml}' --write --ignore-path .gitignore",
     "export": "next build && next export"
   },
@@ -58,6 +59,7 @@
     "eslint-plugin-simple-import-sort": "^12.1.1",
     "eslint-plugin-unused-imports": "^4.1.4",
     "fslightbox-react": "^1.7.6",
+    "globals": "^15.14.0",
     "node-fetch": "^3.3.2",
     "prettier": "^3.4.2",
     "typescript": "^5.7.3",
