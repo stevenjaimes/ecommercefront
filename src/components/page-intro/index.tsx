@@ -10,7 +10,7 @@ import "swiper/css/navigation"; // Estilos específicos para la navegación
 
 const PageIntro = () => {
   // Registrar los módulos
-SwiperCore.use([EffectFade, Navigation]);
+  SwiperCore.use([EffectFade, Navigation]);
 
   // Ahora puedes usar el componente Swiper
 

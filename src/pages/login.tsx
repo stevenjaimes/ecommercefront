@@ -12,11 +12,11 @@ type LoginMail = {
 };
 
 const LoginPage = () => {
-  const { 
-    register, 
-    handleSubmit, 
-    formState: { errors }, 
-} = useForm<LoginMail>();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<LoginMail>();
 
   const onSubmit = async (data: LoginMail) => {
     await postData(`${server}/api/login`, {
