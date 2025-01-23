@@ -1,0 +1,63 @@
+{
+  "name": "next-ecommerce",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "format": "next lint --fix && prettier '**/*.{json,yaml}' --write --ignore-path .gitignore",
+    "export": "next build && next export"
+  },
+  "keywords": [
+    "react",
+    "reactjs",
+    "ecommerce",
+    "nextjs",
+    "next"
+  ],
+  "dependencies": {
+    "@reduxjs/toolkit": "^2.5.0",
+    "eslint-config-next": "^15.1.6",
+    "lodash": "^4.17.21",
+    "next": "^15.1.6",
+    "next-redux-wrapper": "^8.1.0",
+    "rc-slider": "^11.1.8",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-hook-form": "^7.54.2",
+    "react-rater": "^6.0.5",
+    "react-redux": "^9.2.0",
+    "react-select": "^5.9.0",
+    "redux": "^5.0.1",
+    "redux-devtools-extension": "^2.13.9",
+    "redux-persist": "^6.0.0",
+    "redux-thunk": "^3.1.0",
+    "reselect": "^5.1.1",
+    "sass": "^1.83.4",
+    "swiper": "^11.2.1",
+    "swr": "^2.3.0",
+    "use-onclickoutside": "^0.4.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.18.0",
+    "@types/lodash": "^4.17.14",
+    "@types/node": "^22.10.7",
+    "@types/react": "^19.0.7",
+    "@types/react-dom": "^19.0.3",
+    "@typescript-eslint/parser": "^8.21.0",
+    "eslint": "^9.18.0",
+    "eslint-config-prettier": "^10.0.1",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-prettier": "^5.2.3",
+    "eslint-plugin-react": "^7.37.4",
+    "eslint-plugin-react-hooks": "^5.1.0",
+    "eslint-plugin-simple-import-sort": "^12.1.1",
+    "eslint-plugin-unused-imports": "^4.1.4",
+    "fslightbox-react": "^1.7.6",
+    "node-fetch": "^3.3.2",
+    "prettier": "^3.4.2",
+    "typescript": "^5.7.3",
+    "typescript-eslint": "^8.21.0"
+  }
+}
