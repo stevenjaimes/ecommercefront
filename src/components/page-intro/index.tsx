@@ -2,14 +2,15 @@ import SwiperCore from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectFade, Navigation } from 'swiper/modules';
 
-// Registrar los módulos
-SwiperCore.use([EffectFade, Navigation]);
+
 
 import "swiper/css"; // Estilos básicos de Swiper
 import "swiper/css/effect-fade"; // Estilos específicos para el efecto de desvanecimiento
 import "swiper/css/navigation"; // Estilos específicos para la navegación
 
 const PageIntro = () => {
+  // Registrar los módulos
+SwiperCore.use([EffectFade, Navigation]);
 
   // Ahora puedes usar el componente Swiper
 

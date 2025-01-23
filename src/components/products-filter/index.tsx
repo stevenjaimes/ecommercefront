@@ -1,7 +1,7 @@
 import Slider from 'rc-slider';
 import { useState } from "react";
 import  Tooltip from "rc-tooltip"; // Importa Tooltip
-import 'rc-slider/assets/index.css'; // Asegúrate de incluir los estilos
+import "rc-slider/assets/index.css"; // Asegúrate de incluir los estilos
 
 import productsColors from "../../utils/data/products-colors";
 import productsSizes from "../../utils/data/products-sizes";
