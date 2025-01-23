@@ -1,21 +1,19 @@
-import Slider from "rc-slider";
+import Slider from 'rc-slider';
 import { useState } from "react";
+import { Tooltip } from "rc-tooltip"; // Importa Tooltip
+import 'rc-slider/assets/index.css'; // Asegúrate de incluir los estilos
 
 import productsColors from "../../utils/data/products-colors";
 import productsSizes from "../../utils/data/products-sizes";
-// data
 import productsTypes from "../../utils/data/products-types";
 import Checkbox from "./form-builder/checkbox";
 import CheckboxColor from "./form-builder/checkbox-color";
-
-const { createSliderWithTooltip } = Slider;
-const Range = createSliderWithTooltip(Slider.Range);
 
 const ProductsFilter = () => {
   const [filtersOpen, setFiltersOpen] = useState(false);
 
   const addQueryParams = () => {
-    // query params changes
+    // Cambios en los query params
   };
 
   return (
@@ -43,11 +41,29 @@ const ProductsFilter = () => {
         <div className="products-filter__block">
           <button type="button">Price</button>
           <div className="products-filter__block__content">
-            <Range
+            <Slider
+              range
               min={0}
               max={20}
               defaultValue={[3, 10]}
-              tipFormatter={(value) => `${value}%`}
+              allowCross={false} // Previene el cruce de los controles
+              trackStyle={{ backgroundColor: "blue", height: 5 }} // Personaliza la pista del slider
+              handleStyle={{
+                borderColor: "red", // Estilo de los handles
+                height: 20,
+                width: 20,
+                backgroundColor: "green",
+              }}
+              handleRender={(props, state) => (
+                <Tooltip
+                  prefixCls="rc-slider-tooltip"
+                  overlay={`${state.value}%`} // Muestra el valor del tooltip
+                  visible
+                  placement="top"
+                >
+                  <div {...props} />
+                </Tooltip>
+              )}
             />
           </div>
         </div>
