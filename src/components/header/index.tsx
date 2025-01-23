@@ -54,9 +54,14 @@ const Header = ({ isErrorPage }: HeaderType) => {
   };
 
   // on click outside
-  useOnClickOutside(navRef, closeMenu);
-  useOnClickOutside(searchRef, closeSearch);
-
+  if (navRef.current) {
+    useOnClickOutside(navRef, closeMenu);
+  }
+  
+  if (searchRef.current) {
+    useOnClickOutside(searchRef, closeSearch);
+  }
+  
   return (
     <header className={`site-header ${!onTop ? "site-header--fixed" : ""}`}>
       <div className="container">

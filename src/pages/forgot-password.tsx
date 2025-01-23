@@ -11,7 +11,11 @@ type ForgotMail = {
 };
 
 const ForgotPassword = () => {
-  const { register, handleSubmit, formState: { errors } } = useForm<ForgotMail>();
+   const {
+      register,
+      handleSubmit,
+      formState: { errors },
+    } = useForm<ForgotMail>();
 
   const onSubmit = async (data: ForgotMail) => {
     await postData(`${server}/api/login`, {
