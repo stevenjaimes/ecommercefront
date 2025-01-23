@@ -22,8 +22,9 @@ const Header = ({ isErrorPage }: HeaderType) => {
   );
   const [menuOpen, setMenuOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
-  const navRef = useRef<HTMLElement>(null!);
-  const searchRef = useRef<HTMLButtonElement>(null!);
+
+  const navRef = useRef<HTMLElement | null>(null);
+  const searchRef = useRef<HTMLButtonElement | null>(null);
 
   const headerClass = () => {
     if (window.pageYOffset === 0) {
@@ -42,7 +43,7 @@ const Header = ({ isErrorPage }: HeaderType) => {
     window.onscroll = function () {
       headerClass();
     };
-  }, []);
+  }, [arrayPaths, router.pathname, isErrorPage]);
 
   const closeMenu = () => {
     setMenuOpen(false);
