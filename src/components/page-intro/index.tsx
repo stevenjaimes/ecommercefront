@@ -1,8 +1,6 @@
 import SwiperCore from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { EffectFade, Navigation } from 'swiper/modules';
-
-
+import { EffectFade, Navigation } from "swiper/modules";
 
 import "swiper/css"; // Estilos básicos de Swiper
 import "swiper/css/effect-fade"; // Estilos específicos para el efecto de desvanecimiento

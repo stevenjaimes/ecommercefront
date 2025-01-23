@@ -56,11 +56,11 @@ const Header = ({ isErrorPage }: HeaderType) => {
   // on click outside
   useOnClickOutside(navRef as React.RefObject<HTMLElement>, closeMenu);
 
-  
-  
-    useOnClickOutside(searchRef as React.RefObject<HTMLButtonElement>, closeSearch);
- 
-  
+  useOnClickOutside(
+    searchRef as React.RefObject<HTMLButtonElement>,
+    closeSearch,
+  );
+
   return (
     <header className={`site-header ${!onTop ? "site-header--fixed" : ""}`}>
       <div className="container">

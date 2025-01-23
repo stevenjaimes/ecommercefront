@@ -11,11 +11,11 @@ type ForgotMail = {
 };
 
 const ForgotPassword = () => {
-   const {
-      register,
-      handleSubmit,
-      formState: { errors },
-    } = useForm<ForgotMail>();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<ForgotMail>();
 
   const onSubmit = async (data: ForgotMail) => {
     await postData(`${server}/api/login`, {
@@ -54,26 +54,26 @@ const ForgotPassword = () => {
                 />
 
                 {errors.email && errors.email.type === "required" && (
-                  <p className="message message--error">This field is required</p>
+                  <p className="message message--error">
+                    This field is required
+                  </p>
                 )}
 
                 {errors.email && errors.email.type === "pattern" && (
-                  <p className="message message--error">Please write a valid email</p>
+                  <p className="message message--error">
+                    Please write a valid email
+                  </p>
                 )}
               </div>
 
               <div className="form__input-row">
-
                 <input
                   className="form__input"
                   type="password"
                   placeholder="Password"
                   {...register("password", { required: true })}
                 />
-                <p className="message message--error">
-                  This field is required
-                </p>
-
+                <p className="message message--error">This field is required</p>
               </div>
 
               <button
