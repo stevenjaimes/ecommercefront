@@ -1,11 +1,11 @@
-import Link from "next/link";
-import { useRouter } from "next/router";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { useSelector } from "react-redux";
+import { useRouter } from "next/router";
+import Link from "next/link";
+
 import useOnClickOutside from "use-onclickoutside";
 
 import type { RootState } from "@/store";
-
 import Logo from "../../assets/icons/logo";
 
 type HeaderType = {
@@ -15,7 +15,9 @@ type HeaderType = {
 const Header = ({ isErrorPage }: HeaderType) => {
   const router = useRouter();
   const { cartItems } = useSelector((state: RootState) => state.cart);
-  const arrayPaths = ["/"];
+
+  // Memoiza arrayPaths para evitar recrearlo en cada render
+  const arrayPaths = useMemo(() => ["/"], []);
 
   const [onTop, setOnTop] = useState(
     !(!arrayPaths.includes(router.pathname) || isErrorPage),
@@ -43,6 +45,11 @@ const Header = ({ isErrorPage }: HeaderType) => {
     window.onscroll = function () {
       headerClass();
     };
+
+    // Limpieza del efecto
+    return () => {
+      window.onscroll = null;
+    };
   }, [arrayPaths, router.pathname, isErrorPage]);
 
   const closeMenu = () => {
@@ -53,9 +60,8 @@ const Header = ({ isErrorPage }: HeaderType) => {
     setSearchOpen(false);
   };
 
-  // on click outside
+  // Cierra el menú al hacer clic fuera
   useOnClickOutside(navRef as React.RefObject<HTMLElement>, closeMenu);
-
   useOnClickOutside(
     searchRef as React.RefObject<HTMLButtonElement>,
     closeSearch,
@@ -85,7 +91,9 @@ const Header = ({ isErrorPage }: HeaderType) => {
         <div className="site-header__actions">
           <button
             ref={searchRef}
-            className={`search-form-wrapper ${searchOpen ? "search-form--active" : ""}`}
+            className={`search-form-wrapper ${
+              searchOpen ? "search-form--active" : ""
+            }`}
           >
             <form className="search-form">
               <i

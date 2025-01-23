@@ -1,6 +1,6 @@
-import Slider from "rc-slider";
 import { useState } from "react";
-import Tooltip from "rc-tooltip"; // Importa Tooltip
+import Slider from "rc-slider";
+import Tooltip from "rc-tooltip";
 import "rc-slider/assets/index.css"; // Asegúrate de incluir los estilos
 
 import productsColors from "../../utils/data/products-colors";
@@ -8,6 +8,7 @@ import productsSizes from "../../utils/data/products-sizes";
 import productsTypes from "../../utils/data/products-types";
 import Checkbox from "./form-builder/checkbox";
 import CheckboxColor from "./form-builder/checkbox-color";
+
 
 const ProductsFilter = () => {
   const [filtersOpen, setFiltersOpen] = useState(false);
