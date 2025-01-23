@@ -23,7 +23,7 @@ const Header = ({ isErrorPage }: HeaderType) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
 
-  const navRef = useRef<HTMLElement | null>(null);
+  const navRef = useRef<HTMLElement>(null);
   const searchRef = useRef<HTMLButtonElement | null>(null);
 
   const headerClass = () => {
@@ -54,13 +54,12 @@ const Header = ({ isErrorPage }: HeaderType) => {
   };
 
   // on click outside
-  if (navRef.current) {
-    useOnClickOutside(navRef, closeMenu);
-  }
+  useOnClickOutside(navRef as React.RefObject<HTMLElement>, closeMenu);
+
   
-  if (searchRef.current) {
-    useOnClickOutside(searchRef, closeSearch);
-  }
+  
+    useOnClickOutside(searchRef as React.RefObject<HTMLButtonElement>, closeSearch);
+ 
   
   return (
     <header className={`site-header ${!onTop ? "site-header--fixed" : ""}`}>
